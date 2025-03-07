@@ -67,7 +67,7 @@ optional arguments:
 
 ## Reference
 
-[Signed Graph Autoencoder for Explainable and Polarization-Aware Network Embeddings](https://www.arxiv.org/pdf/2409.10452), Nikolaos Nakis, Chrysoula Kosma, Giannis Nikolentzos, Michail Chatzianastasis, Iakovos Evdaimon, and Michalis Vazirgiannis, AISTATS 25
+[Signed Graph Autoencoder for Explainable and Polarization-Aware Network Embeddings](https://www.arxiv.org/pdf/2409.10452). Nikolaos Nakis, Chrysoula Kosma, Giannis Nikolentzos, Michail Chatzianastasis, Iakovos Evdaimon, and Michalis Vazirgiannis, AISTATS 25
 
 
 
