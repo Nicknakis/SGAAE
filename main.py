@@ -154,10 +154,7 @@ if __name__ == "__main__":
     sample_size=int(args.sample_percentage*N)
     model = SGAAE_(init_dim,dataset_pgm,sparse_i,sparse_j,weights_signed,N,latent_dim=latent_dim,sample_size=sample_size,device=device,VAE=VAE).to(device)         
     model.scaling=0
-    # # create initial convex hull
-    # model.find_convex_hull()
-    # # initialize SLIM-RAA model
-    # model.LDM_to_RAA()
+    
     
     # set-up optimizer
     optimizer = optim.Adam(model.parameters(), 0.005)  
@@ -204,14 +201,7 @@ if __name__ == "__main__":
                 model.eval()
                      
                 try:
-                    # z,w,gamma,delta=model.forward_test()
-                    
-                    # if model.scaling:
-                        
-                    #     pred=LP_(z.detach(),w.detach(),gamma.detach(),delta.detach(),dataset,sparse_i,sparse_j,weights_signed,device=device,inner=inner)
-                    # else:
-                    #     pred=LP_(z.detach(),w.detach(),gamma.detach(),delta.detach(),dataset,sparse_i,sparse_j,weights_signed,device=device,inner=inner)
-                        
+                   
                     if model.scaling:
                          
                          pred=LP_(model.latent_z.detach(),model.latent_w.detach(),model.gamma_.detach(),model.delta_.detach(),dataset,sparse_i,sparse_j,weights_signed,device=device,inner=inner)
@@ -238,3 +228,4 @@ if __name__ == "__main__":
         n_z_roc,n_z_pr=pred.neg_zer()
     
     torch.save(model.state_dict(),f'./model_{dataset}.pth')      
+
